@@ -14,7 +14,7 @@
             "cwd": "${workspaceFolder}",
             "mainClass": "dev.loop.temporalio.benchmarker.activityworker.ActivityWorkerApplication",
             "projectName": "activity-worker",
-            "args": "",
+            "args": "--debug",
             "envFile": "${workspaceFolder}/.env"
         },
         {
@@ -24,7 +24,7 @@
             "cwd": "${workspaceFolder}",
             "mainClass": "dev.loop.temporalio.benchmarker.workflowworker.WorkflowWorkerApplication",
             "projectName": "workflow-worker",
-            "args": "",
+            "args": "--debug",
             "envFile": "${workspaceFolder}/.env"
         }
     ]
