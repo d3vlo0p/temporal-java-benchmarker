@@ -1,0 +1,9 @@
+spring:
+  temporal:
+    connection:
+      target: ${TEMPORAL_ADDRESS:localhost:7233}
+      enable-https: ${TEMPORAL_HTTPS:false}
+    namespace: ${TEMPORAL_NAMESPACE:default}
+    workers:
+      - task-queue: ${BENCHMARKER_TASKQUEUE:default}
+        activity-beans: "BenchmarkActivity"

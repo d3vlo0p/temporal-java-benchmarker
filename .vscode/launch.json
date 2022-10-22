@@ -1,0 +1,31 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "dev.loop.temporalio.benchmarker.App",
+            "projectName": "runner"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ActivityWorkerApplication<activity-worker>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "dev.loop.temporalio.benchmarker.activityworker.ActivityWorkerApplication",
+            "projectName": "activity-worker",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-WorkflowWorkerApplication<workflow-worker>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "dev.loop.temporalio.benchmarker.workflowworker.WorkflowWorkerApplication",
+            "projectName": "workflow-worker",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

@@ -1,0 +1,13 @@
+spring:
+  temporal:
+    connection:
+      target: ${TEMPORAL_ADDRESS:localhost:7233}
+      enable-https: ${TEMPORAL_HTTPS:false}
+    namespace: ${TEMPORAL_NAMESPACE:default}
+    # start-workers: false
+    workers:
+      - task-queue: ${BENCHMARKER_TASKQUEUE:default}
+        workflow-classes: 
+          - "dev.loop.temporalio.benchmarker.workflowworker.workflow.BenchmarkerWorkflowImpl"
+benchmarker:
+  activity-task-queue: ${BENCHMARKER_ACTIVITY_TASKQUEUE:default}

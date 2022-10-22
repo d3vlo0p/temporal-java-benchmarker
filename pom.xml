@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>dev.loop.temporalio.benchmarker</groupId>
+
+  <artifactId>benchmarker</artifactId>
+
+  <version>0.0.1-SNAPSHOT</version>
+
+  <name>benchmarker</name>
+
+  <packaging>pom</packaging>
+
+  <modules>
+
+    <module>commons</module>
+
+    <module>activity-worker</module>
+
+    <module>workflow-worker</module>
+
+    <module>runner</module>
+
+  </modules>
+
+</project>
