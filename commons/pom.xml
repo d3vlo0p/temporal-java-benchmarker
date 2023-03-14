@@ -8,12 +8,13 @@
   <name>commons</name>
   <properties>
     <maven.compiler.release>17</maven.compiler.release>
+		<temporalio.version>1.17.0</temporalio.version>
   </properties>
   <dependencies>
     <dependency>
       <groupId>io.temporal</groupId>
       <artifactId>temporal-sdk</artifactId>
-      <version>1.16.0</version>
+      <version>${temporalio.version}</version>
       <scope>compile</scope>
     </dependency>
     <dependency>

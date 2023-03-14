@@ -6,7 +6,6 @@ import dev.loop.temporalio.benchmarker.commons.workflow.BenchmarkerWorkflow;
 import io.temporal.client.WorkflowClient;
 import io.temporal.client.WorkflowOptions;
 import io.temporal.serviceclient.WorkflowServiceStubs;
-import io.temporal.worker.WorkerFactoryOptions;
 
 public class App {
 
@@ -17,11 +16,11 @@ public class App {
         WorkflowOptions options = WorkflowOptions.newBuilder()
                 .setTaskQueue("default")
                 .build();
-        BenchmarkerWorkflow workflow = client.newWorkflowStub(BenchmarkerWorkflow.class, options);
-
+        BenchmarkerWorkflow workflow;
         for (int i = 0; i < 10; i++) {
+            workflow = client.newWorkflowStub(BenchmarkerWorkflow.class, options);
             BenchmarkResult r = workflow.benchmark(new BenchmarkInput(2L, 10L, 200L));
-            System.out.printf("Benchmark Execution n.%d : %s", i, r.toString());
+            System.out.printf("Benchmark Execution n.%d : %s%n", i, r.toString());
         }
     }
 

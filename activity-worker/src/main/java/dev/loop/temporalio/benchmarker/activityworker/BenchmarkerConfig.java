@@ -8,7 +8,7 @@ import lombok.Setter;
 
 @Setter
 @Getter
-@Configuration
+// @Configuration
 @ConfigurationProperties(prefix = "benchmarker")
 public class BenchmarkerConfig {
 

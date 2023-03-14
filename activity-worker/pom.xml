@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.7.5</version>
+		<version>2.7.9</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>dev.loop.temporalio.benchmarker</groupId>
@@ -16,7 +16,7 @@
 		<java.version>17</java.version>
 		<spring-cloud.version>2021.0.4</spring-cloud.version>
 		<spring-cloud-sleuth-otel.version>1.1.0</spring-cloud-sleuth-otel.version>
-		<temporalio.version>1.16.0</temporalio.version>
+		<temporalio.version>1.17.0</temporalio.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -54,11 +54,13 @@
 			<version>${temporalio.version}</version>
 		</dependency> -->
 
+		<!-- https://mvnrepository.com/artifact/io.temporal/temporal-spring-boot-starter-alpha -->
 		<dependency>
 			<groupId>io.temporal</groupId>
 			<artifactId>temporal-spring-boot-starter-alpha</artifactId>
 			<version>${temporalio.version}</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.temporal/temporal-spring-boot-autoconfigure-alpha -->
 		<dependency>
 			<groupId>io.temporal</groupId>
 			<artifactId>temporal-spring-boot-autoconfigure-alpha</artifactId>
@@ -84,6 +86,11 @@
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
+			<dependency>
+				<groupId>io.temporal</groupId>
+				<artifactId>temporal-sdk</artifactId>
+				<version>${temporalio.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
