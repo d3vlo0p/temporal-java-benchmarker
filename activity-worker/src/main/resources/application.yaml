@@ -7,3 +7,4 @@ spring:
     workers:
       - task-queue: ${BENCHMARKER_TASKQUEUE:default}
         activity-beans: "BenchmarkActivity"
+management.endpoints.web.exposure.include: health,info,prometheus

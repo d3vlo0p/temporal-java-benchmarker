@@ -9,5 +9,6 @@ spring:
       - task-queue: ${BENCHMARKER_TASKQUEUE:default}
         workflow-classes: 
           - "dev.loop.temporalio.benchmarker.workflowworker.workflow.BenchmarkerWorkflowImpl"
+management.endpoints.web.exposure.include: health,info,prometheus
 benchmarker:
   activity-task-queue: ${BENCHMARKER_ACTIVITY_TASKQUEUE:default}
