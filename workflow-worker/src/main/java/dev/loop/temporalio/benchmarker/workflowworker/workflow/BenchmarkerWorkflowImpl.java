@@ -4,6 +4,8 @@ import java.time.Duration;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.slf4j.Logger;
+
 import dev.loop.temporalio.benchmarker.commons.activity.BenchmarkActivity;
 import dev.loop.temporalio.benchmarker.commons.activity.BenchmarkActivityInput;
 import dev.loop.temporalio.benchmarker.commons.activity.BenchmarkActivityResult;
@@ -25,13 +27,17 @@ public class BenchmarkerWorkflowImpl implements BenchmarkerWorkflow {
                             .build())
                     .build());
 
+    static Logger log = Workflow.getLogger(BenchmarkerWorkflowImpl.class);
+
     @Override
     public BenchmarkResult benchmark(BenchmarkInput input) {
+        long startTime = Workflow.currentTimeMillis();
         List<BenchmarkActivityResult> results = new LinkedList<>();
         for (int i = 0; i < input.iterations(); i++) {
             results.add(activity
                     .benchmark(new BenchmarkActivityInput(input.minDurationInMillis(), input.maxDurationInMillis())));
         }
+        log.info("Total wf execution: {} ms", Workflow.currentTimeMillis() - startTime);
         return new BenchmarkResult(results);
     }
 
