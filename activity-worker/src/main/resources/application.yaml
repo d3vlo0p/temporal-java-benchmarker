@@ -4,15 +4,13 @@ spring:
       target: ${TEMPORAL_ADDRESS:localhost:7233}
       enable-https: ${TEMPORAL_HTTPS:false}
     namespace: ${TEMPORAL_NAMESPACE:default}
-    start-workers: true
     workers:
       - task-queue: ${BENCHMARKER_TASKQUEUE:default}
-        # name: activity-worker
+        capacity:
+          max-concurrent-workflow-task-executors: 2
+          max-concurrent-activity-executors: ${BENCHMARKER_EXECUTORS:200}
+          max-concurrent-local-activity-executors: ${BENCHMARKER_EXECUTORS:200}
+          max-concurrent-workflow-task-pollers: 2
+          max-concurrent-activity-task-pollers: ${BENCHMARKER_POLLERS:5}
         activity-beans: "BenchmarkActivity"
-        # capacity:
-        #   max-concurrent-workflow-task-executors: 2
-        #   max-concurrent-activity-executors: ${BENCHMARKER_EXECUTORS:200}
-        #   max-concurrent-local-activity-executors: ${BENCHMARKER_EXECUTORS:200}
-        #   max-concurrent-workflow-task-pollers: 2
-        #   max-concurrent-activity-task-pollers: ${BENCHMARKER_POLLERS:5}
 management.endpoints.web.exposure.include: health,info,prometheus

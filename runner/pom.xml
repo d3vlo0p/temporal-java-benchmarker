@@ -14,7 +14,7 @@
   <url>http://maven.apache.org</url>
   <properties>
     <maven.compiler.release>17</maven.compiler.release>
-		<temporalio.version>1.17.0</temporalio.version>
+		<temporalio.version>1.18.2</temporalio.version>
   </properties>
   <dependencies>
 		<dependency>
