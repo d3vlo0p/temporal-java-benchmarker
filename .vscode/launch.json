@@ -26,6 +26,16 @@
             "projectName": "workflow-worker",
             // "args": "--debug",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-WorkerApplication<fullstack-worker>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "dev.loop.temporalio.benchmarker.worker.WorkerApplication",
+            "projectName": "fullstack-worker",
+            // "args": "--debug",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }

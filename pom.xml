@@ -21,6 +21,8 @@
 
     <module>workflow-worker</module>
 
+    <module>fullstack-worker</module>
+
     <module>runner</module>
 
   </modules>
