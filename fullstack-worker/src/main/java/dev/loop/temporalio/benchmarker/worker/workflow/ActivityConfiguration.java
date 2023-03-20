@@ -10,7 +10,7 @@ public class ActivityConfiguration {
     static Boolean localActivity;
 
     @Value("${benchmarker.activity-task-queue:default}")
-    public static void setNameStatic(String taskQueue) {
+    public void setNameStatic(String taskQueue) {
         ActivityConfiguration.TASKQUEUE = taskQueue;
     }
 
@@ -19,7 +19,7 @@ public class ActivityConfiguration {
     }
 
     @Value("${benchmarker.local-activity:false}")
-    public static void setLocalActivity(Boolean localActivity) {
+    public void setLocalActivity(Boolean localActivity) {
         ActivityConfiguration.localActivity = localActivity;
     }
 
