@@ -4,6 +4,9 @@ spring:
       target: ${TEMPORAL_ADDRESS:localhost:7233}
       enable-https: ${TEMPORAL_HTTPS:false}
     namespace: ${TEMPORAL_NAMESPACE:default}
+    workflow-cache:
+      max-instances: ${BENCHMARKER_CACHE_INSTANCES:600}
+      max-threads: ${BENCHMARKER_CACHE_THREADS:600}
     workers:
       - task-queue: ${BENCHMARKER_TASKQUEUE:default}
         capacity:
