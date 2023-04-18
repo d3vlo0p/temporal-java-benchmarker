@@ -24,6 +24,7 @@ public class BenchmarkActivityImpl implements BenchmarkActivity {
             Thread.sleep(millisToWait);
         } catch (InterruptedException e) {
             log.warn("Wait interrupted", e);
+            Thread.currentThread().interrupt();
         }
         return new BenchmarkActivityResult(System.currentTimeMillis() - startTime);
     }
