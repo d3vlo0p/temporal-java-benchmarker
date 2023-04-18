@@ -2,7 +2,6 @@ package dev.loop.temporalio.benchmarker.worker.api;
 
 import java.time.Duration;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,8 +20,11 @@ import reactor.core.publisher.Mono;
 @RequestMapping("/api")
 public class WorkerController {
 
-    @Autowired
     WorkflowClient client;
+
+    public WorkerController(WorkflowClient client) {
+        this.client = client;
+    }
 
     WorkflowOptions options;
 
