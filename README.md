@@ -4,7 +4,7 @@ The Temporal Java Benchmarker is a tool for testing and optimizing the performan
 
 
 
-![Sequence](/.eraser/vOUk3ycCXOa35Kr58qei___ihLDE2uB3Jd8F5A5cguEaTXqad22___---figure---FRCxMhS4UztwjJLmpp8sg---figure---gtTFDSKZlkcasTlQVlRmWg.svg "Sequence")
+![Sequence](/.eraser/vOUk3ycCXOa35Kr58qei___ihLDE2uB3Jd8F5A5cguEaTXqad22___---figure---eQ4Q8hzkMXlQJcqPIZhtd---figure---gtTFDSKZlkcasTlQVlRmWg.svg "Sequence")
 
 
 
