@@ -1,0 +1,11 @@
+@baseUrl = http://127.0.0.1:8083
+
+POST {{baseUrl}}/api/benchmarker
+Content-Type: application/json
+
+{
+    "iterations": 10,
+    "minDurationInMillis": 10,
+    "maxDurationInMillis": 50
+}
+
